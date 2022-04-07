@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/motionlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple_200"
+    app:layoutDescription="@xml/activity_main_scene"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/start_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="isSeparating?"
+        android:textSize="55sp"
+        app:layout_constraintBottom_toTopOf="@+id/horizontal_fold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/vertical_fold"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Vertical folding feature scenario and elements -->
+
+    <androidx.constraintlayout.widget.ReactiveGuide
+        android:id="@+id/vertical_fold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="0dp"
+        app:reactiveGuide_animateChange="true"
+        app:reactiveGuide_applyToAllConstraintSets="true"
+        app:reactiveGuide_valueId="@id/vertical_fold" />
+
+    <View
+        android:id="@+id/vertical_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/teal_200"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/vertical_fold"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/vertical_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="It's true!\nand vertical"
+        android:textAlignment="center"
+        android:textColor="#FFF"
+        android:textSize="64sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/vertical_fold"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Horizontal folding feature scenario and elements -->
+
+    <androidx.constraintlayout.widget.ReactiveGuide
+        android:id="@+id/horizontal_fold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="0dp"
+        app:reactiveGuide_animateChange="true"
+        app:reactiveGuide_applyToAllConstraintSets="true"
+        app:reactiveGuide_valueId="@id/horizontal_fold" />
+
+    <View
+        android:id="@+id/horizontal_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/teal_200"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_fold" />
+
+    <TextView
+        android:id="@+id/horizontal_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="It's true!\nand horizontal"
+        android:textAlignment="center"
+        android:textColor="#FFF"
+        android:textSize="64sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/horizontal_background"
+        app:layout_constraintEnd_toEndOf="@+id/horizontal_background"
+        app:layout_constraintStart_toStartOf="@+id/horizontal_background"
+        app:layout_constraintTop_toTopOf="@+id/horizontal_background" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
